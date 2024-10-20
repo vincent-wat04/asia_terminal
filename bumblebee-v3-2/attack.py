@@ -16,10 +16,13 @@ def demolisher_line_strategy(self, units, game_state):
 def set_attacker(self, units, game_state):
     max_ping_num = int(game_state.get_resource(1))//int(game_state.type_cost(units.PING)[1])
     if self.is_right_opening:
-        ping_location = [[12, 1], [11, 2]]
+        ping_location = [[12, 1]]
+        remove_wall_at = [[20, 11], [21, 11]]
     else:
-        ping_location = [[15, 1], [16, 2]]
-    game_state.attempt_spawn(units.PING, ping_location, max_ping_num//2)
+        ping_location = [[15, 1]]
+        remove_wall_at = []
+    game_state.attempt_remove(remove_wall_at)
+    game_state.attempt_spawn(units.PING, ping_location, max_ping_num)
 
 def endgame_attacker(self, units, game_state):
     # speed up the attacks

@@ -16,6 +16,7 @@ def build_defences_with_adaptive_opening(
 
     # Place destructors that attack enemy units
     # 下面的 destructor_locations 是基本保障   共 32 SPs
+    # turret
     opening_destructor_locations = [[4, 12], [10, 11], [17, 11], [23, 12]]
     game_state.attempt_spawn(units.DESTRUCTOR, opening_destructor_locations)
     game_state.attempt_upgrade(opening_destructor_locations)

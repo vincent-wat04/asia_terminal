@@ -16,6 +16,25 @@ def build_defences(game_state, units, is_right_opening, filter_locs, basic_destr
     # first upgrade the existing basic destructors
     game_state.attempt_upgrade(basic_destructor_locations)
 
+    # reinforce the opening_destructor_locations
+    reinforce_destructor_locations = [
+        [9, 10],
+        [11, 10],
+        [16, 10],
+        [18, 10]
+    ]
+    game_state.attempt_spawn(units.DESTRUCTOR, reinforce_destructor_locations)
+    game_state.attempt_upgrade(reinforce_destructor_locations)
+
+    # reinforce these destructors
+    reinforce_filter_locations = [
+        [10, 12],
+        [17, 12],
+        [9, 11]
+    ]
+    game_state.attempt_spawn(units.FILTER, reinforce_filter_locations)
+    game_state.attempt_upgrade(reinforce_filter_locations)
+
 
     # More destructors around hole/opening
     opening_destructor_locations = (

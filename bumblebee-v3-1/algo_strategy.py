@@ -30,6 +30,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         """
         self.config = config
         global FILTER, ENCRYPTOR, DESTRUCTOR, PING, EMP, SCRAMBLER, BITS, CORES
+        # wall, support, turret, scout, demolisher, interceptor
         FILTER = config["unitInformation"][0]["shorthand"]
         ENCRYPTOR = config["unitInformation"][1]["shorthand"]
         DESTRUCTOR = config["unitInformation"][2]["shorthand"]
